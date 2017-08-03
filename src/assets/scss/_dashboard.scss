@@ -1,0 +1,328 @@
+body {
+    background-color: #E5EDEE;
+}
+
+.white {
+    color: white;
+}
+
+.navbar {
+    background-color:#006A76; 
+    padding: 0.5vh; 
+    position: relative;    
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: -1rem;
+    left: 0;
+    right: 0;
+    opacity: 1;
+    text-align: center;
+    .overlay-text {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        h4 {
+            color: white;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+            }         
+        }   
+}
+
+.info-display {
+    background-color: #51b2f1;
+    border-radius: 0.5rem;
+    border: 2px solid white;
+    h5 {
+        margin: 0;
+    }
+}
+
+.mapdisplay {
+    height: 50vh;
+    overflow: hidden;
+    // Only affects medium screens and larger
+    @include breakpoint(large) {
+        // All CSS in here goes inside the media query
+        height: 95vh;
+    }
+    #mapbg {
+        background-image: url("assets/img/PLUS-06-10-Riverbar-v1.png");
+        background-repeat: no-repeat;
+        background-position: center; 
+        background-size: contain;
+        //position: absolute;
+        //transform: translate(-50%,-50%);
+        //top: 50%;
+        //left: 50%;
+        display: block;
+        margin: 0 auto;
+        height: 100%;
+        overflow: auto;
+        //position: fixed;
+        height: 100%;
+            
+    }
+    .callout--style {
+        //position: absolute;
+        //right: 0;
+        //bottom: 0;
+        //opacity: 0.8;
+        @include breakpoint(xxlarge down) {
+            // All CSS in here goes inside the media query
+            background-color: green;
+            color: white;
+        }
+    }
+}
+
+.circle {
+    background-color: rgba(81, 178, 241, 0.6);
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    //box-shadow: inset 0 0 0 40px #00247D, inset 0 0 0 80px #fff;
+    box-shadow: inset 0 0 0 2em rgba(200, 90, 172, 0.6);
+}
+
+.left-panel {
+    @include breakpoint(large) {
+        height: 95vh;
+    }
+}
+
+.menudisplay {
+    .callout--style {
+    @include breakpoint(large) {
+        // All CSS in here goes inside the media query
+        //position: absolute;
+        //right: 0;
+        //bottom: 0; 
+        //width: 24%;
+        //height: 20vh;
+        margin-top: 2rem;
+        h5 {
+            margin-top: 12%;
+        }
+    }        
+    }
+    .ui-helper-hidden {
+        display: none;
+    }
+    &.tabs-content {
+        border: none;
+        background-color: transparent;
+    }
+    .tabs-content, .tabs-title a {
+        font-size: 1.2rem;
+    }
+    #panel3, #map-view {
+        .phone {
+            margin-top: 15px;
+            background: transparent;
+        }
+        .tel {
+            margin-bottom: 10px;
+            margin-top: 10px;
+            border: 1px solid #9e9e9e;
+            border-radius: 0px;
+        }
+        .num-pad {
+            //padding-left: 15px;
+            .small-4 {
+                padding: 0.3em 0.2em;
+            }
+        }
+        .num {
+            border: 1px solid rgba(0,0,0,0.2);
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            -moz-border-radius: 5px;
+            //height: 4em;
+            background-color: #fff;
+            color: #333;
+            cursor: pointer;
+            margin: 0.1em
+        }
+        .num:hover {
+            background-color: #F29C1F;
+            color: #fff;
+            transition-property: background-color .2s linear 0s;
+            -moz-transition: background-color .2s linear 0s;
+            -webkit-transition: background-color .2s linear 0s;
+            -o-transition: background-color .2s linear 0s;
+        }
+        .txt {
+            font-size: 3em;
+            text-align: center;
+            padding: 0.5em 0;
+            font-family: 'Lato', sans-serif;
+            //line-height: 30px;
+            color: #105c67;
+            font-weight: bolder;
+        }
+        .small {
+            font-size: 15px;
+        }
+        .btn {
+            font-weight: bold;
+            -webkit-transition: .1s ease-in background-color;
+            -webkit-font-smoothing: antialiased;
+            letter-spacing: 1px;
+        }
+        .btn:hover {
+            transition-property: background-color .2s linear 0s;
+            -moz-transition: background-color .2s linear 0s;
+            -webkit-transition: background-color .2s linear 0s;
+            -o-transition: background-color .2s linear 0s;
+        }
+        .active {
+            color: #3498db;
+        }
+    }
+    .mobile-2 {
+            &:before{
+                content: "PH";
+                color: white;
+                position: absolute;
+                background-color: green;
+                padding:0.3em;
+                border-radius: 9999em;
+                left: 0.5em;
+                top: 0.4em;
+                z-index: 9999;
+            }
+        }
+    .list-details {
+        background-color: #f6f6f6;
+        border-radius: 1rem;
+        border: 1px solid #333333;
+        padding: 0;
+        display: block;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        position: relative;
+        table {
+            margin: 0;
+            td.tag-location {
+                width: 60%;
+                @include breakpoint(xlarge) {
+                    width: 70%;
+                }
+            }
+        }
+        &:hover {
+            background-color: #cccccc;
+            -webkit-box-shadow: 10px 10px 32px -12px rgba(0,0,0,0.5);
+            -moz-box-shadow: 10px 10px 32px -12px rgba(0,0,0,0.5);
+            box-shadow: 10px 10px 32px -12px rgba(0,0,0,0.5);
+        }
+        table, tr, td, tbody {
+            //background-color: transparent;
+            //border-radius: 2rem;
+            //white-space: pre;
+            //padding: 0;
+            //margin: 0;
+            border-spacing: 0;
+        }
+        .tag-number {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            height: 0;
+            padding: 50% 0;
+            border-radius: 50%;
+            background: #000;
+            color: white;
+            font-size: 2rem;
+            font-weight: bolder;
+            text-align: center;
+            line-height: 0;
+        }
+        .tag-location, .tag-dwell-time {
+            color: white;
+        }
+        .tag-dwell-time {
+            background-color: black;
+        }
+        .tag-location h3 {
+            font-weight: bolder;
+        }
+    }
+}
+
+.callout--style {
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    border: solid 2px green;
+    opacity: 0.8;
+}
+
+.search__form {
+    width: 75%;
+    max-width: 900px;
+    margin: 1em auto;
+}
+
+.search__input {
+    font-family: inherit;
+    font-size: 4rem;
+    line-height: 1;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 0 0.1em 0;
+    color: inherit;
+    border-bottom: 4px solid;
+    border: none;
+    box-shadow: none;
+    height: 1em;
+    overflow: visible;
+    background: transparent;
+}
+
+.search__input::-webkit-input-placeholder {
+    opacity: 0.1;
+    /* WebKit, Blink, Edge */
+    color: #000;
+}
+
+.search__input::-moz-placeholder {
+    opacity: 0.1;
+    /* Mozilla Firefox 19+ */
+    color: #000;
+}
+
+.search__input:-ms-input-placeholder {
+    opacity: 0.1;
+    /* Internet Explorer 10-11 */
+    color: #000;
+}
+
+.search__input::-webkit-search-cancel-button,
+.search__input::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+.search__input::-ms-clear {
+    display: none;
+}
+
+.search__info {
+    font-size: 90%;
+    font-weight: bold;
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.85em 0;
+    text-align: right;
+}
